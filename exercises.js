@@ -409,7 +409,9 @@ var getKeys = function(obj) {
  * @param {Object}
  * @return {Array}
  */
-var objectToArray;
+var objectToArray = function(obj) {
+  return Object.entries(obj);
+};
 
 /* #arrayToObject
  *
@@ -541,7 +543,7 @@ module.exports = {
   strToKeys: strToKeys,
   getValues: getValues,
   getKeys: getKeys,
-  objectToArray: null,
+  objectToArray: objectToArray,
   arrayToObject: null,
   arraysToObject: null,
   objectsToTuples: null,
