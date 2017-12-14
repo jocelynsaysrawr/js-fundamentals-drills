@@ -454,7 +454,9 @@ var arraysToObject = function(arr1, arr2) {
  * @param {Object}
  * @return {Array}
  */
-var objectsToTuples;
+var objectsToTuples = function(obj1, obj2) {
+  return Object.entries(obj1).concat(Object.entries(obj2));
+};
 
 /* #mapArrayValues
  *
@@ -558,7 +560,7 @@ module.exports = {
   objectToArray: objectToArray,
   arrayToObject: arrayToObject,
   arraysToObject: arraysToObject,
-  objectsToTuples: null,
+  objectsToTuples: objectsToTuples,
   mapArrayValues: null,
   mapStringCounts: null,
   arrayToObjectNums: null,
