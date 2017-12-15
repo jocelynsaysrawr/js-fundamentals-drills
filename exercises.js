@@ -482,7 +482,17 @@ var mapArrayValues = function(arr) {
  * @param {Array}
  * @return {Object}
  */
-var mapStringCounts;
+var mapStringCounts = function(arr) {
+  var obj = {};
+  for (var i = 0; i < arr.length; i++){
+    if (arr[i].length >= 5){
+      obj[arr[i]] = true;
+    }else{
+      obj[arr[i]] = false;
+    }
+  }
+  return obj;
+};
 
 /* #arrayToObjectNums
  *
@@ -568,7 +578,7 @@ module.exports = {
   arraysToObject: arraysToObject,
   objectsToTuples: objectsToTuples,
   mapArrayValues: mapArrayValues,
-  mapStringCounts: null,
+  mapStringCounts: mapStringCounts,
   arrayToObjectNums: null,
   stringToKeys: null,
   charCountMap: null,
