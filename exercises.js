@@ -567,7 +567,13 @@ var frequencyMap = function(arr) {
  * @param {String}
  * @return {Bool}
  */
-var tupleConvertToObject;
+var tupleConvertToObject = function(arr) {
+  var obj = {};
+  for (var i = 0; i < arr.length; i++){
+    obj[arr[i][0]] = arr[i][1];
+  }
+  return obj;
+};
 
 
 module.exports = {
@@ -610,5 +616,5 @@ module.exports = {
   stringToKeys: stringToKeys,
   charCountMap: charCountMap,
   frequencyMap: frequencyMap,
-  tupleConvertToObject: null
+  tupleConvertToObject: tupleConvertToObject
 }
